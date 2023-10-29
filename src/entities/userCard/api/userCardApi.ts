@@ -1,11 +1,12 @@
 import { baseApi } from "@/shared/api/baseApi"
-import { ReqGetUserByName, ResGetAllUsers } from '../types/types'
+import { ReqGetUserById, ReqGetUserByName, ResGetAllUsers, ResGetUserById } from '../types/types'
 import { useQuery } from "react-query"
-export const useGetAllUsers = () => {
-    const fetcher = async () => (await baseApi.get<ResGetAllUsers>('/')).data
+export const useGetUserById = ({ id }: ReqGetUserById) => {
+    
+    const fetcher = async () => (await baseApi.get<ResGetUserById>(`/user/${id}`)).data
     const queryResult = useQuery({
         queryFn: fetcher,
-        queryKey: ['Users']
+        queryKey: ['User']
     })
     return queryResult
 }
@@ -13,7 +14,7 @@ export const useGetUserByName = ({ name }: ReqGetUserByName) => {
     const fetcher = async () => (await baseApi.get<ResGetAllUsers>(`/?term=${name}`)).data
     const queryResult = useQuery({
         queryFn: fetcher,
-        queryKey: ['User']
+        queryKey: ['Users']
     })
     return queryResult
 }
