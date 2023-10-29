@@ -1,1 +1,1 @@
-export { UserCard } from "./ui/userCard"
+export { UserCardList } from './ui/userCardList'
