@@ -1,5 +1,6 @@
 .main{
     padding: 64px 200px;
+  
     width: 100vw;
     height: 100vh;
 }
@@ -8,5 +9,7 @@
         padding: 64px 80px ;
         width: 1280px;
         height: 720px;
+       overflow-x: hidden;
+       
     }
 }
