@@ -3,7 +3,10 @@
     "target": "ESNext",
     "plugins": [
       {
-        "name": "typescript-plugin-css-modules"
+        "name": "typescript-plugin-css-modules",
+      },
+      {
+        "name": "vite-plugin-svgr/client"
       }
     ],
     "useDefineForClassFields": true,
